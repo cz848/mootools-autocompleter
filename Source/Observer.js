@@ -19,7 +19,7 @@ var Observer = new Class({
 	},
 
 	initialize: function(el, onFired, options){
-		this.element = $(el) || $$(el);
+		this.element = document.id(el) || $$(el);
 		this.addEvent('onFired', onFired);
 		this.setOptions(options);
 		this.bound = this.changed.bind(this);
@@ -28,7 +28,7 @@ var Observer = new Class({
 
 	changed: function() {
 		var value = this.element.get('value');
-		if ($equals(this.value, value)) return;
+		if (this.value === value) return;
 		this.clear();
 		this.value = value;
 		this.timeout = this.onFired.delay(this.options.delay, this);
@@ -63,7 +63,3 @@ var Observer = new Class({
 	}
 
 });
-
-var $equals = function(obj1, obj2) {
-	return (obj1 == obj2 || JSON.encode(obj1) == JSON.encode(obj2));
-};

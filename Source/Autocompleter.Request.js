@@ -17,8 +17,8 @@ Autocompleter.Request = new Class({
 	options: {/*
 		indicator: null,
 		indicatorClass: null,
-		onRequest: $empty,
-		onComplete: $empty,*/
+		onRequest: function() {},
+		onComplete: function() {},*/
 		postData: {},
 		ajaxOptions: {},
 		postVar: 'value'
@@ -28,7 +28,7 @@ Autocompleter.Request = new Class({
 	query: function(){
 		var data = Object.clone(this.options.postData) || {};
 		data[this.options.postVar] = this.queryValue;
-		var indicator = $(this.options.indicator);
+		var indicator = document.id(this.options.indicator);
 		if (indicator) indicator.setStyle('display', '');
 		var cls = this.options.indicatorClass;
 		if (cls) this.element.addClass(cls);
@@ -42,7 +42,7 @@ Autocompleter.Request = new Class({
 	 * Inherated classes have to extend this function and use this.parent()
 	 */
 	queryResponse: function() {
-		var indicator = $(this.options.indicator);
+		var indicator = document.id(this.options.indicator);
 		if (indicator) indicator.setStyle('display', 'none');
 		var cls = this.options.indicatorClass;
 		if (cls) this.element.removeClass(cls);
