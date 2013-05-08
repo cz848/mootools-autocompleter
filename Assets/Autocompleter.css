@@ -1,5 +1,4 @@
-ul.autocompleter-choices
-{
+.autocompleter-choices{
 	position:				absolute;
 	margin:					0;
 	padding:				0;
@@ -10,13 +9,11 @@ ul.autocompleter-choices
 	border-bottom-color:	#ddd;
 	background-color:		#fff;
 	text-align:				left;
-	font-family:			Verdana, Geneva, Arial, Helvetica, sans-serif;
 	z-index:				50;
 	background-color:		#fff;
 }
 
-ul.autocompleter-choices li
-{
+.autocompleter-choices li{
 	position:				relative;
 	margin:					-2px 0 0 0;
 	padding:				0.2em 1.5em 0.2em 1em;
@@ -29,14 +26,12 @@ ul.autocompleter-choices li
 	line-height:			1.5em;
 }
 
-ul.autocompleter-choices li.autocompleter-selected
-{
+.autocompleter-choices .autocompleter-selected{
 	background-color:		#444;
 	color:					#fff;
 }
 
-ul.autocompleter-choices span.autocompleter-queried
-{
+.autocompleter-choices .autocompleter-queried{
 	display:				inline;
 	float:					none;
 	font-weight:			bold;
@@ -44,19 +39,16 @@ ul.autocompleter-choices span.autocompleter-queried
 	padding:				0;
 }
 
-ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried
-{
+.autocompleter-choices .autocompleter-selected .autocompleter-queried{
 	color:					#9FCFFF;
 }
 
-.autocompleter-loading
-{
+.autocompleter-loading{
   background-image:     url(images/spinner.gif);
   background-repeat:    no-repeat;
   background-position:  right 50%;
 }
 
-textarea.autocompleter-loading
-{
+textarea.autocompleter-loading{
   background-position:  right bottom;
 }
