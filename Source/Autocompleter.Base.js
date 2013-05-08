@@ -149,7 +149,7 @@ var Autocompleter = new Class({
 	},
 
 	setSelection: function(finish) {
-		var input = this.selected.inputValue, value = input;
+		var input = this.selected.inputValue + '', value = input;
 		var start = this.queryValue.length, end = input.length;
 		if (input.substr(0, start).toLowerCase() != this.queryValue.toLowerCase()) start = 0;
 		if (this.options.multiple) {
@@ -321,8 +321,8 @@ var Autocompleter = new Class({
 	 * @return		{String} Text
 	 */
 	markQueryValue: function(str) {
-	  if (!str) return; // if str is null
-	  
+	  	if (!str) return; // if str is null
+		str = str + '';
 		return (!this.options.markQuery || !this.queryValue) ? str
 			: str.replace(new RegExp('(' + ((this.options.filterSubset) ? '' : '^') + this.queryValue.escapeRegExp() + ')', (this.options.filterCase) ? '' : 'i'), '<span class="autocompleter-queried">$1</span>');
 	},
